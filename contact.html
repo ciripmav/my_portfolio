@@ -91,7 +91,29 @@
                     data-mlon="-89.2903">
                 </div>
             </div>
-        </section> 
+        </section>
+        
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC8kvMfn1QkABRf0s9aKIb-m4dB0NkcpkA"></script>
+        <p>(map will be functional soon)</p>
+        <script>
+            function initMap() {
+                var mapOptions = {
+                    center: new google.maps.LatLng(31.3271, -89.2903),
+                    zoom: 16,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                };
+                var map = new google.maps.Map(document.getElementById("mapBox"), mapOptions);
+                var marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(31.3271, -89.2903),
+                    map: map,
+                    title: "Hattiesburg, Mississippi"
+                });
+            }
+        
+            google.maps.event.addDomListener(window, 'load', initMap);
+        </script>
+        
+        
                 </div>
                 <div class="row">
                     <div class="col-lg-3">
