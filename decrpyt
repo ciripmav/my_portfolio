@@ -1,0 +1,49 @@
+import string
+
+# Define the Playfair Cipher encryption function
+def playfair_cipher(plaintext, keyword):
+    # Remove spaces and convert plaintext and keyword to all uppercase
+    plaintext = plaintext.replace(" ", "").upper()
+    keyword = keyword.upper()
+
+    # Remove any duplicate characters from the keyword
+    keyword = "".join(dict.fromkeys(keyword))
+
+    # Generate the Playfair Cipher square based on the keyword
+    alphabet = string.ascii_uppercase.replace("J", "")
+    key_alphabet = keyword + alphabet + "Z"
+    cipher_square = [key_alphabet[i:i+5] for i in range(0, 30, 5)]
+
+    # Replace any occurrences of "J" with "I" in the plaintext
+    plaintext = plaintext.replace("J", "I")
+
+    # Add a "Z" to the end of the plaintext if the length is odd
+    if len(plaintext) % 2 != 0:
+        plaintext += "Z"
+
+    # Encrypt the plaintext by converting pairs of letters to their corresponding cipher square coordinates
+    result = ""
+    for i in range(0, len(plaintext), 2):
+        letter1 = plaintext[i]
+        if letter1 not in key_alphabet:
+            result += letter1
+            continue
+        letter2 = plaintext[i+1]
+        if letter2 not in key_alphabet:
+            result += letter2
+            continue
+        if letter1 == letter2:
+            letter2 = "Z"
+        row1, col1 = divmod(cipher_square.index(letter1),5)
+        row2, col2 = divmod(cipher_square.index(letter2), 5)
+        if row1 == row2:
+            result += cipher_square[row1][(col1 + 1) % 5]
+            result += cipher_square[row2][(col2 + 1) % 5]
+        elif col1 == col2:
+            result += cipher_square[(row1 + 1) % 6][col1]
+            result += cipher_square[(row2 + 1) % 6][col2]
+        else:
+            result += cipher_square[row1][col2]
+            result += cipher_square[row2][col1]
+
+    return result
