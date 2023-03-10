@@ -861,7 +861,8 @@ body{
   font-size: 14px;
   line-height: 24px;
   color: #777;
-  font-style: italic; }
+  font-style: italic;
+  text-align: center;}
 .single-post-area .arrow {
   position: absolute; }
   .single-post-area .arrow .lnr {
