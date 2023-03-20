@@ -7,13 +7,8 @@
         {
             "type": "chrome",
             "request": "launch",
-<<<<<<< HEAD
-            "name": "Launch Chrome against localhost",
-            "file": "${workspaceFolder}/single-blog.html"
-=======
-            "name": "Open",
-            "file": "c:\\Users\\zayat\\OneDrive\\Desktop\\webdev23-main\\my_portfolio\\projects.html"
+            "name": "Open single-blog.html",
+            "file": "single-blog.html"
         }
->>>>>>> 731383e3ab4f1d254d77464dfb17d8e79f30a198
     ]
 }
