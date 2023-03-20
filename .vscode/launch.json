@@ -1,12 +1,19 @@
 {
     // Use IntelliSense to learn about possible attributes.
     // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
         {
-            "type": "pwa-chrome",
+            "type": "chrome",
             "request": "launch",
+<<<<<<< HEAD
             "name": "Launch Chrome against localhost",
             "file": "${workspaceFolder}/single-blog.html"
+=======
+            "name": "Open",
+            "file": "c:\\Users\\zayat\\OneDrive\\Desktop\\webdev23-main\\my_portfolio\\projects.html"
+        }
+>>>>>>> 731383e3ab4f1d254d77464dfb17d8e79f30a198
     ]
 }
